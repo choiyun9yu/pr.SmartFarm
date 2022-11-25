@@ -4,18 +4,11 @@ import numpy as np
 from pathlib import Path
 
 def Another(ROOT):
-    # thisLOC = Path(__file__).resolve()
-    # exp_path = str(thisLOC.parents[0]/'runs/detect/exp/')
+    
     exp_path = str(ROOT/'runs/detect/exp')
-
     with open(exp_path+"/fiststage.txt", "r") as f:
         txt = f.readlines()  
-    
-    try:
-        os.unlink(exp_path+"/result.txt")
-    except:
-        with open(exp_path+"/result.txt", 'w') as f:
-            f.write('')
+
 
     GinseongCoordinate, HeadCoordinate, GinseongAllList, DetactedAllList, best = [], [], [], [], []
     NearestGinseong, conveyer, feeder = float('inf'), 0, 0
@@ -99,22 +92,21 @@ def Another(ROOT):
                     best = []
             feeder = 0
             conveyer = 0
-    print('-----------SYNARIO-----------')
-    print(f'인삼 검출 갯수 : {len(GinseongAllList)}')
-    print(f'컨베이어 작동') if conveyer == 1 else print('컨베이어 멈춤')
-    print(f'정상 검출 갯수 : {len(DetactedAllList)}')
-    print('피더 작동') if feeder == 1 else print('피더 멈춤')
+            
+    # print('-----------SYNARIO-----------')
+    # print(f'인삼 검출 갯수 : {len(GinseongAllList)}')
+    # print(f'컨베이어 작동') if conveyer == 1 else print('컨베이어 멈춤')
+    # print(f'정상 검출 갯수 : {len(DetactedAllList)}')
+    # print('피더 작동') if feeder == 1 else print('피더 멈춤')
 
-    try:
-        print(f'그리퍼 각도 : {angle}')
-        print(f'좌표 : {x_coordinate}, {y_coordinate}')
-        print('-'*29)
-    except:
-        print('Best pick does not exist!')
-        print('-'*29)
-    if best:  
-        with open(exp_path+"/result.txt", 'w') as f:
-            f.write(f'{conveyer} {feeder} {angle} {x_coordinate} {y_coordinate}')
-        return conveyer, feeder, angle, x_coordinate, y_coordinate
-    else:
-        return conveyer, feeder, angle, x_coordinate, y_coordinate
+    # try:
+    #     print(f'그리퍼 각도 : {angle}')
+    #     print(f'좌표 : {x_coordinate}, {y_coordinate}')
+    #     print('-'*29)
+    # except:
+    #     print('Best pick does not exist!')
+    #     print('-'*29)
+
+    with open(exp_path+"/result.txt", 'w') as f:
+        f.write(f'{conveyer} {feeder} {angle} {x_coordinate} {y_coordinate}')
+    return conveyer, feeder, angle, x_coordinate, y_coordinate
