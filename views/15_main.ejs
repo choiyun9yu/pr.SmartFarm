@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <!-- router폴더 아래의 stylesheets 폴더 삭제하면 안됨 -->
+    <link rel="stylesheet" type="text/css" href="15_stlye_main.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
+
+    <script src="https://kit.fontawesome.com/704cd0872f.js" crossorigin="anonymous"></script><!--FontAwesome CDN-->
+    
+</head>
+<body>
+    <nav class="navbar" style="display: flex;">
+        <div class="navbar_toggle">
+            <a href="#" class="menu">
+                <i class="fa-solid fa-bars"></i>
+            </a>
+        </div>
+        <div class="navbar_logo">
+            <img id ="logo" src="/image/logo3.png">
+        </div>
+        <div class="navbar_x">
+            <a href="/html/10_icon.html" class="close"><i class="fa-regular fa-bell"></i></a>
+        </div>
+    </nav>
+
+    <div class="date">
+        <img src="/image/today.png" alt=""><div id="current_date"></p></div>
+    </div>
+    
+    <div class="out_form">
+        <div class="title">
+            <p>Farm 01</p> <img src="/image/calendar.png" alt="">
+        </div>
+            <div class="sensor_form">
+                <div class="t_h">
+                    <div id="temp">
+                        <div class="sensor_title">
+                            <p><span>온도</span></p>
+                        </div>
+                        <div class="sensor_value">
+                            <p><span id="tem"><%= tem + '℃' %></span></p>
+                        </div>
+                        
+                    </div>
+                    <div id="humidity">
+                        <div class="sensor_title">
+                            <p><span>습도</span></p>
+                        </div>
+                        <div class="sensor_value">
+                            <p><span id="hum"><%= humd + '%' %></span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="c_w">
+                    <div id="CO2">
+                        <div class="sensor_title">
+                            <p><span>CO2</span></p>
+                        </div>
+                        <div class="sensor_value">
+                            <p><span id="co2"><%= co2 + 'ppm' %></span></p>
+                        </div>
+                       
+                    </div>
+                    <div id="watertank">
+                        <div class="sensor_title">
+                            <p><span>물탱크</span></p>
+                        </div>
+                        <div class="sensor_value">
+                            <p><span id="wtuw"><%= wtuw + '%' %></span></p>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+        <div class="act_form">
+            <div class="act_btn">
+                <img src="/image/auto_mode.png" alt="">
+            </div>
+            <div class="act_btn">
+                <img id="air_off" src="/image/air_off.png" alt="">
+                <img src="/image/temp_form.png" alt="">                           
+            </div>
+            <div class="act_font">
+                <p class="act_name1"><span>에어컨</span></p> <p class="act_name1"><span>목표 온도 설정</span></p>
+            </div>
+            <div class="act_btn">
+                <img id="fan_off" src="/image/fan_off.png" alt="">
+                <img id="led_off" src="/image/led_off.png" alt="">
+                <img id="o2_off" src="/image/o2_off.png" alt="">
+            </div>
+            <div class="act_font">
+                <p class="act_name2_1"><span>환기</span></p><p class="act_name2"><span>LED</span></p><p class="act_name2"><span>산소발생기</span></p>
+            </div>
+            <div class="act_btn1">
+                <img id="water_off" src="/image/water_off.png" alt="">
+                <img id="robot_off" src="/image/robot_off.png" alt="">
+            </div>
+            <div class="act_font">
+                <p class="act_name3_1"><span>&nbsp;물탱크</span></p><p class="act_name3"><span>수직컨베이어</span></p>
+            </div>
+        </div>
+        <div id="on_off">
+            <img id="btn_off" src="/image/btn_off.png" alt="">
+        </div>
+        <div id="up_down">
+            <img id="up" src="/image/triangle_up.png" alt="">
+            <div id="line"></div>
+            <img id="down" src="/image/triangle_down.png" alt="">  
+        </div>
+        <div id="temperature"><p><span id="temp_cnt">22</span><span>℃</span></p></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <script>
+
+        // '/getSensor'로 tem, hum, co2, wtuw값 받아서
+        // id가 'tem', 'hum', 'co2', 'wtuw' 인 것에 innerHTML로 값 넣기
+        function getSensor() {
+            console.log("값 들어옴");
+        $.ajax({
+            url: "/getSensor",
+            type: "GET",
+            success: function (data) {
+            console.log("진짜 들어옴");
+            const tem = document.getElementById('tem');
+            const hum = document.getElementById('hum');
+            const co2 = document.getElementById('co2');
+            const wtuw = document.getElementById('wtuw');
+            
+            tem.innerHTML = `${data[0].tem_sensor}℃`
+            hum.innerHTML = `${data[0].hum_sensor}%`
+            co2.innerHTML = `${data[0].co2_sensor}ppm`
+            wtuw.innerHTML = `${data[0].wtuw_sensor}%`
+                },
+
+            });
+        }
+        // getSensor 함수 1초 단위로 실시간 띄우기
+        setInterval(getSensor, 1000);
+
+        // 달력
+        date = new Date();
+        year = date.getFullYear();
+        month = date.getMonth() + 1;
+        day = date.getDate();
+        document.getElementById("current_date").innerHTML = year + "." + month + "." + day;
+
+        // 자동버튼
+        var auto;
+        $(document).on('click','#btn_off',function(){
+            // 자동버튼 off -> 자동버튼 on
+            $(this).attr('src', '/image/btn_on.png')
+            //id라는 속성삭제
+            $(this).removeAttr('id')
+            //버튼에 btn_on라는 id부여
+            $(this).attr('id','btn_on')
+            auto = 1
+            $.ajax({
+                url: "/btn1",
+                data : {"auto" : `${auto}`},
+                type: "POST",
+                dataType: "json"
+                });
+        })
+        $(document).on('click','#btn_on',function(){
+            // 자동버튼 on -> 자동버튼 off
+            $(this).attr('src', '/image/btn_off.png')
+            // id라는 속성삭제
+            $(this).removeAttr('id')
+            //버튼에 btn_off라는 id부여
+            $(this).attr('id','btn_off')
+            auto = 0
+            $.ajax({
+                url: "/btn1",
+                data : {"auto" : `${auto}`},
+                type: "POST",
+                dataType: "json"
+                });
+        })
+
+        // 에어컨버튼
+        // 켜지면 1값 전송, 꺼지면 0값 전송
+        var airconditioner;
+        $(document).on('click','#air_off',function(){
+            $(this).attr('src', '/image/air_on.png')
+            $(this).removeAttr('id')
+            $(this).attr('id','air_on')
+            airconditioner = 1
+            $.ajax({
+                url: "/btn2",
+                data : {"temp" : `${temp_cnt.innerText}`, 'airconditioner' : `${airconditioner}`},
+                type: "POST",
+                dataType: "json"
+                });
+        })
+        $(document).on('click','#air_on',function(){
+            $(this).attr('src', '/image/air_off.png')
+            $(this).removeAttr('id')
+            $(this).attr('id','air_off')
+            airconditioner = 0
+            $.ajax({
+                url: "/btn2",
+                data : {"temp" : `${temp_cnt.innerText}`, 'airconditioner' : `${airconditioner}`},
+                type: "POST",
+                dataType: "json"
+                });
+        })
+        // 에어컨 온도 올림
+        $(document).on('click','#up',function(){
+            const current = parseInt(temp_cnt.innerText, 10);
+            temp_cnt.innerText = current + 1;
+            $.ajax({
+                url: "/btn2",
+                data : {"temp" : `${temp_cnt.innerText}`, 'airconditioner' : `${airconditioner}`},
+                type: "POST",
+                dataType: "json"
+                });
+        })
+        // 에어컨 온도 내림
+        $(document).on('click','#down',async function(){
+            const current = parseInt(temp_cnt.innerText, 10);
+            temp_cnt.innerText = current - 1;
+            $.ajax({
+                url: "/btn2",
+                data : {"temp" : `${temp_cnt.innerText}`, 'airconditioner' : `${airconditioner}`},
+                type: "POST",
+                dataType: "json"
+                });  
+        });
+
+        // 환기버튼
+        // 켜지면 1값 전송, 꺼지면 0값 전송
+        var vent;
+        $(document).on('click','#fan_off',function(){
+            $(this).attr('src', '/image/fan_on.png');
+            $(this).removeAttr('id');
+            $(this).attr('id','fan_on');
+            vent = 1
+            $.ajax({
+                url: "/btn3",
+                data : {"vent" : `${vent}`},
+                type: "POST",
+                dataType: "json"
+                });
+        })
+        $(document).on('click','#fan_on',function(){
+            $(this).attr('src', '/image/fan_off.png')
+            $(this).removeAttr('id')
+            $(this).attr('id','fan_off')
+            vent = 0
+            $.ajax({
+                url: "/btn3",
+                data : {"vent" : `${vent}`},
+                type: "POST",
+                dataType: "json"
+                });
+        })
+
+        // LED버튼
+        // 켜지면 1값 전송, 꺼지면 0값 전송
+        var led
+        $(document).on('click','#led_off',function(){
+            $(this).attr('src', '/image/led_on.png')
+            $(this).removeAttr('id')
+            $(this).attr('id','led_on')
+            led = 1
+            $.ajax({
+                url: "/btn4",
+                data : {"led" : `${led}`},
+                type: "POST",
+                dataType: "json"
+                });
+        })
+        $(document).on('click','#led_on',function(){
+            $(this).attr('src', '/image/led_off.png')
+            $(this).removeAttr('id')
+            $(this).attr('id','led_off')
+            led = 0
+            $.ajax({
+                url: "/btn4",
+                data : {"led" : `${led}`},
+                type: "POST",
+                dataType: "json"
+                });
+        })
+
+        // 산소발생기버튼
+        // 켜지면 1값 전송, 꺼지면 0값 전송
+        var o2;
+        $(document).on('click','#o2_off',function(){
+            $(this).attr('src', '/image/o2_on.png')
+            $(this).removeAttr('id')
+            $(this).attr('id','o2_on')
+            o2 = 1
+            $.ajax({
+                url: "/btn5",
+                data : {"o2" : `${o2}`},
+                type: "POST",
+                dataType: "json"
+                });
+        })
+        $(document).on('click','#o2_on',function(){
+            $(this).attr('src', '/image/o2_off.png')
+            $(this).removeAttr('id')
+            $(this).attr('id','o2_off')
+            o2 = 0
+            $.ajax({
+                url: "/btn5",
+                data : {"o2" : `${o2}`},
+                type: "POST",
+                dataType: "json"
+                });
+        }) 
+
+        // 물탱크
+        // 켜지면 1값 전송, 꺼지면 0값 전송
+        var addwt;
+        $(document).on('click','#water_off',function(){
+            $(this).attr('src', '/image/water_on.png')
+            $(this).removeAttr('id')
+            $(this).attr('id','water_on')
+            addwt = 1
+            $.ajax({
+                url: "/btn6",
+                data : {"addwt" : `${addwt}`},
+                type: "POST",
+                dataType: "json"
+                });
+        })
+        $(document).on('click','#water_on',function(){
+            $(this).attr('src', '/image/water_off.png')
+            $(this).removeAttr('id')
+            $(this).attr('id','water_off')
+            addwt = 0
+            $.ajax({
+                url: "/btn6",
+                data : {"addwt" : `${addwt}`},
+                type: "POST",
+                dataType: "json"
+                });
+        }) 
+
+        // 수직컨베이어
+        // 켜지면 1값 전송, 꺼지면 0값 전송
+        var conv1;
+        $(document).on('click','#robot_off',function(){
+            $(this).attr('src', '/image/robot_on.png')
+            $(this).removeAttr('id')
+            $(this).attr('id','robot_on')
+            conv1 = 1
+            $.ajax({
+                url: "/btn7",
+                data : {"conv1" : `${conv1}`},
+                type: "POST",
+                dataType: "json"
+                });
+        })
+        $(document).on('click','#robot_on',function(){
+            $(this).attr('src', '/image/robot_off.png')
+            $(this).removeAttr('id')
+            $(this).attr('id','robot_off')
+            conv1 = 0
+            $.ajax({
+                url: "/btn7",
+                data : {"conv1" : `${conv1}`},
+                type: "POST",
+                dataType: "json"
+                });
+        })
+        
+    </script>
+</body>
+</html>
