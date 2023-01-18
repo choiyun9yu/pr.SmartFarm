@@ -46,4 +46,4 @@
     - 카메라와 컨베이어 벨트사이의 좌표 맵핑  
     - 45도 단위보다 정교한 각도 도출 알고리즘 개발
     
-  yolo v5 포크 (https://github.com/choiyun9yu/yolov5)
+- yolo v5 포크 (https://github.com/choiyun9yu/yolov5)
