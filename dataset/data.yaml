@@ -1,0 +1,13 @@
+names:
+- Ginseng
+- head
+nc: 2
+roboflow:
+  license: CC BY 4.0
+  project: insam
+  url: https://universe.roboflow.com/yungyu-choi-urac0/insam/dataset/10
+  version: 10
+  workspace: yungyu-choi-urac0
+test: ../test/images
+train: /Users/choiyungyu/Library/Mobile Documents/com~apple~CloudDocs/AI-school/pr.Auto-Farming/dataset/train.txt
+val: /Users/choiyungyu/Library/Mobile Documents/com~apple~CloudDocs/AI-school/pr.Auto-Farming/dataset/val.txt

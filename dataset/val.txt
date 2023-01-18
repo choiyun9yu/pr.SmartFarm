@@ -1,0 +1,9 @@
+/Users/choiyungyu/Library/Mobile Documents/com~apple~CloudDocs/AI-school/pr.Auto-Farming/dataset/valid/images/KakaoTalk_20221031_144727497_19_jpg.rf.d0f151c45fb4c24b3d7fe2133859811c.jpg
+/Users/choiyungyu/Library/Mobile Documents/com~apple~CloudDocs/AI-school/pr.Auto-Farming/dataset/valid/images/KakaoTalk_20221031_144727497_17_jpg.rf.aa8f006c2b90cbaa1dfccb2af7de3706.jpg
+/Users/choiyungyu/Library/Mobile Documents/com~apple~CloudDocs/AI-school/pr.Auto-Farming/dataset/valid/images/IMG_0883_JPG.rf.b3dbe47a0b70293fafe99b25da5dd95c.jpg
+/Users/choiyungyu/Library/Mobile Documents/com~apple~CloudDocs/AI-school/pr.Auto-Farming/dataset/valid/images/KakaoTalk_20221031_144727497_06_jpg.rf.368fa2fdd903c3caddb5d4bd036377c9.jpg
+/Users/choiyungyu/Library/Mobile Documents/com~apple~CloudDocs/AI-school/pr.Auto-Farming/dataset/valid/images/IMG_0894_JPG.rf.db4fdf9a5a1ceeefb00a36e661a29f25.jpg
+/Users/choiyungyu/Library/Mobile Documents/com~apple~CloudDocs/AI-school/pr.Auto-Farming/dataset/valid/images/KakaoTalk_20221031_144727497_09_jpg.rf.f64c3e6f9c46e0285c0243ee79295d8c.jpg
+/Users/choiyungyu/Library/Mobile Documents/com~apple~CloudDocs/AI-school/pr.Auto-Farming/dataset/valid/images/IMG_0881_JPG.rf.906df5f57e07cc1fda0d092d333fec2d.jpg
+/Users/choiyungyu/Library/Mobile Documents/com~apple~CloudDocs/AI-school/pr.Auto-Farming/dataset/valid/images/KakaoTalk_20221031_144727497_02_jpg.rf.dabba9217d2e131717cbf75c1ce69d9a.jpg
+/Users/choiyungyu/Library/Mobile Documents/com~apple~CloudDocs/AI-school/pr.Auto-Farming/dataset/valid/images/IMG_0880_JPG.rf.3089a831812111d4717440e2f5f71d61.jpg
