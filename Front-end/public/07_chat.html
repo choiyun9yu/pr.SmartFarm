@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>chat</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./css/07_chat.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/704cd0872f.js"
+      crossorigin="anonymous"
+    ></script>
+    <!--FontAwesome CDN-->
+  </head>
+  <body>
+    <nav class="navbar" style="display: flex">
+      <div class="navbar_toggle">
+        <a href="03_menu.html" class="menu">
+          <i class="fa-solid fa-bars"></i>
+        </a>
+      </div>
+      <div class="navbar_logo">
+        <img id="logo" src="../image/logo3.png" />
+      </div>
+      <div class="navbar_x">
+        <a href="02_main.html" class="close"><i class="fa-solid fa-x"></i></a>
+      </div>
+    </nav>
+
+    <div class="out_form">
+      <div class="title">
+        <h2><b>1:1 채팅상담</b></h2>
+      </div>
+      <div class="in_form">
+        <div id="chat">
+          <p id="date">
+            <img id="line1" src="../image/line.png" alt="" /><b>오늘</b
+            ><img id="line2" src="../image/line.png" alt="" />
+          </p>
+          <p><img src="../image/answer.png" alt="" id="answer" /></p>
+        </div>
+
+        <div class="input_box">
+          <button type="button" class="btn btn-warning" id="btn1">
+            장애접수
+          </button>
+          <button type="button" class="btn btn-warning" id="btn2">
+            사용법 문의
+          </button>
+          <button type="button" class="btn btn-warning" id="btn3">
+            기타 문의
+          </button>
+          <div class="input_text">
+            <input type="text" id="input_from" />
+            <img
+              id="paper_plane"
+              src="../image/paper-plane-regular.svg"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      $("#btn1").click(() => {
+        $("#chat").append(
+          "<div class='myinput'><p><span>장애접수</span><p></div>"
+        );
+        $("#chat").append(
+          "<div class='otherinput'><p><span>문제를 선택해주세요</span><p></div>"
+        );
+        $("#chat").append(
+          "<div><button>하드웨어</button><button>네트워크통신</button><button>전력</button>"
+        );
+      });
+      $("#btn2").click(() => {
+        $("#chat").append(
+          "<div class='myinput'><p><span>사용법 문의</span><p></div>"
+        );
+        $("#chat").append(
+          "<div class='otherinput'><p><span>필요한 사용법을 선택해주세요</span><p></div>"
+        );
+        $("#chat").append(
+          "<div><button>컨트롤러</button><button>네트워크</button><button>Robot Arm</button>"
+        );
+      });
+      $("#btn3").click(() => {
+        $("#chat").append(
+          "<div class='myinput'><p><span>기타 문의</span><p></div>"
+        );
+        $("#chat").append(
+          "<div class='otherinput'><p><span>문의 내용 선택</span><p></div>"
+        );
+        $("#chat").append(
+          "<div><button>앱관련</button><button>채팅상담 연결</button><button>고객센터 연결</button>"
+        );
+      });
+      $(document).on("click", "#paper_plane", function () {
+        let com = $("input[type=text]").val();
+        $("#chat").append(
+          "<div class='myinput'><p><span>" + com + "</span></p></div>"
+        );
+        $("input[type=text]").val("");
+      });
+    </script>
+  </body>
+</html>
