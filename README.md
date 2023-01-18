@@ -7,7 +7,7 @@
 # My Role : DeepLearning, Database
 1. 나의 역할 : 딥러닝, 데이터베이스, 기획/발표
 
-2. 내가 사용한 기술 : Yolo V5, OpenCV, MySQL
+2. 내가 사용한 기술 : Yolo v5, OpenCV, MySQL
 
 3. 객체탐지 모델 학습
     - 데이터 수집 : 새싹삼 재배 농장에서 묘삼을 촬영
