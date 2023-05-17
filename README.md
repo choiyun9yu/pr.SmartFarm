@@ -1,14 +1,16 @@
 ![Auto Farming](https://github.com/choiyun9yu/pr.Auto-Farming/blob/main/Document/project.png)
-
-# Auto-Farming
 [![roboflow](https://github.com/choiyun9yu/pr.Auto-Farming/blob/main/Document/roboflow.svg)](https://app.roboflow.com/yungyu-choi-urac0)
 [![colab](https://github.com/choiyun9yu/pr.Auto-Farming/blob/main/Document/colab.svg)](https://colab.research.google.com/drive/1oOt1ESaCDMBZyef1I7tjePFKp-Rl15sv)
 [![yolov5](https://github.com/choiyun9yu/pr.Auto-Farming/blob/main/Document/yolo.svg)](https://github.com/choiyun9yu/yolov5)
 
 ## Overview
+This days, the issue of deteriorating climate conditions and a shortage of agricultural workforce is getting increasingly prominent.
+So we try to solve this problem with Smart-farm.
+We created **'Automatic Planting Device for Ginseng Using Vision System and Robot Arm'**.
+![front](https://github.com/choiyun9yu/pr.Auto-Farming/blob/main/Document/front%20view.png)
 
 ## 
-![front](https://github.com/choiyun9yu/pr.Auto-Farming/blob/main/Document/front%20view.png)
+
 
 ![process](https://github.com/choiyun9yu/pr.Auto-Farming/blob/main/Document/process.png)
 
