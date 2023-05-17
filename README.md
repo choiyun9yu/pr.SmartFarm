@@ -14,7 +14,8 @@ We created **'Automatic Planting Device for Ginseng Using Vision System and Robo
 The device use [YOLOv5](https://github.com/choiyun9yu/pr.Auto-Farming/blob/main/Document/yolo.svg)](https://github.com/choiyun9yu/yolov5) which was modified to predict angles of objects to detect ginsengs.
 
 This object detect model was trained with the data we collected ourselves. And the datasets was labeled through roboflow.
-If you want to know detail code [here](https://github.com/choiyun9yu/pr.Auto-Farming/blob/main/Document/colab.svg)](https://colab.research.google.com/drive/1oOt1ESaCDMBZyef1I7tjePFKp-Rl15sv).
+If you want to know detail code [here](https://colab.research.google.com/drive/1oOt1ESaCDMBZyef1I7tjePFKp-Rl15sv).
+
 ![roboflow2](https://github.com/choiyun9yu/pr.Auto-Farming/blob/main/Document/roboflow2.png)
 
 ![process](https://github.com/choiyun9yu/pr.Auto-Farming/blob/main/Document/process.png)
