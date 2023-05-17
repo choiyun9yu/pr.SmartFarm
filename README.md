@@ -1,4 +1,17 @@
-# 진행 프로젝트 : Auto-Farming
+# Auto-Farming
+[![roboflow]()](https://app.roboflow.com/yungyu-choi-urac0)
+[![colab]()](https://colab.research.google.com/drive/1oOt1ESaCDMBZyef1I7tjePFKp-Rl15sv)
+[![yolov5]()](https://github.com/choiyun9yu/yolov5)
+
+## Overview
+
+## 
+
+
+
+
+
+
 1. 개요 : 기후 악화, 농업 인력 부족을 3세대 스마트 팜으로 해소
 2. 목표 : 비전 시스템과 로봇팔을 활용한 묘삼 자동 식재 장치 개발
 3. 팀원 : 박진우(하드웨어, 프론트엔드), 윤승욱(백엔드), 이범기(로봇팔), 문영철(컨베이어) 외 5인
