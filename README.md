@@ -1,7 +1,7 @@
 ![Auto Farming](https://github.com/choiyun9yu/pr.Auto-Farming/blob/main/Document/project.png)  
 <a href="https://app.roboflow.com/yungyu-choi-urac0"><img src="https://img.shields.io/badge/Roboflow-#A901DB?style=plastic"/></a>  
 [![roboflow](https://github.com/choiyun9yu/pr.Auto-Farming/blob/main/Document/roboflow.svg)](https://app.roboflow.com/yungyu-choi-urac0)
-<a href="https://colab.research.google.com/drive/1oOt1ESaCDMBZyef1I7tjePFKp-Rl15sv"><img src="https://img.shields.io/badge/Colab-#A901DB?style=plastic&logo=logo=colab&logoColor=#F9AB00"/></a>  
+<a href="https://colab.research.google.com/drive/1oOt1ESaCDMBZyef1I7tjePFKp-Rl15sv"><img src="https://img.shields.io/badge/Colab-#A901DB?style=plastic&logo=logo=#F9AB00&logoColor=#F9AB00"/></a>  
 [![colab](https://github.com/choiyun9yu/pr.Auto-Farming/blob/main/Document/colab.svg)](https://colab.research.google.com/drive/1oOt1ESaCDMBZyef1I7tjePFKp-Rl15sv)
 [![yolov5](https://github.com/choiyun9yu/pr.Auto-Farming/blob/main/Document/yolo.svg)](https://github.com/choiyun9yu/yolov5)
 
